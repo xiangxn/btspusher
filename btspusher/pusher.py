@@ -52,7 +52,7 @@ class PusherComponent(ApplicationSession):
 class Pusher(object):
     def __init__(
             self, loop, login_info=None, co=None, cb=None):
-        url = u"wss://api.weaccount.cn"
+        url = u"wss://wamp.btsgo.net/ws"
         realm = u"realm1"
         try:
             if login_info:
@@ -64,7 +64,7 @@ class Pusher(object):
             runner.run(PusherComponent)
             loop.run_until_complete(asyncio.wait_for(PusherComponent.future, 10))
         except Exception:
-            print("can't connect to api.weaccount.cn")
+            print("can't connect to wamp.btsgo.net")
 
     def publish(self, *args, **kwargs):
         kwargs["__t"] = args[0]
