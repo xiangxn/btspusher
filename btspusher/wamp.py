@@ -93,7 +93,7 @@ class ApplicationRunner(object):
 
         # 2) create a WAMP-over-WebSocket transport client factory
         transport_factory = WampWebSocketClientFactory(create, url=self.url, serializers=self.serializers)
-        transport_factory.setProtocolOptions(failByDrop=False, openHandshakeTimeout=90, closeHandshakeTimeout=5)
+        # transport_factory.setProtocolOptions(failByDrop=False, openHandshakeTimeout=90, closeHandshakeTimeout=5)
 
         # 3) start the client
         loop = asyncio.get_event_loop()
