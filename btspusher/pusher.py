@@ -52,7 +52,7 @@ class PusherComponent(ApplicationSession):
 class Pusher(object):
     def __init__(
             self, loop, login_info=None, co=None, cb=None):
-        url = u"wss://pusher.btsbots.com/ws"
+        url = u"wss://api.btsgo.net/ws"
         realm = u"realm1"
         try:
             if login_info:
