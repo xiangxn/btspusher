@@ -62,10 +62,9 @@ class Pusher(object):
             PusherComponent.cb = cb
             runner = ApplicationRunner(url, realm)
             runner.run(PusherComponent)
-            loop.run_until_complete(
-                asyncio.wait_for(PusherComponent.future, 10))
+            loop.run_until_complete(asyncio.wait_for(PusherComponent.future, 10))
         except Exception:
-            print("can't connect to pusher.btsbots.com")
+            print("can't connect to api.btsgo.net")
 
     def publish(self, *args, **kwargs):
         kwargs["__t"] = args[0]
