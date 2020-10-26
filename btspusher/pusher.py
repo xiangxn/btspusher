@@ -18,7 +18,7 @@ class PusherComponent(ApplicationSession):
 
     @asyncio.coroutine
     def onJoin(self, details):
-        print("join")
+        # print("join")
         PusherComponent.instance = self
         if self.future:
             self.future.set_result(1)
@@ -29,7 +29,7 @@ class PusherComponent(ApplicationSession):
             yield from self.co(self)
 
     def onConnect(self):
-        print("connected")
+        # print("connected")
         if self.login_info:
             self.join(self.config.realm, [u"wampcra"], self.login_info["user"])
         else:
