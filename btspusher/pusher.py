@@ -63,8 +63,8 @@ class Pusher(object):
             runner = ApplicationRunner(url, realm)
             runner.run(PusherComponent)
             loop.run_until_complete(asyncio.wait_for(PusherComponent.future, 10))
-        except Exception:
-            print("can't connect to wamp.btsgo.net")
+        except Exception as e:
+            print("can't connect to wamp.btsgo.net",e)
 
     def publish(self, *args, **kwargs):
         kwargs["__t"] = args[0]
